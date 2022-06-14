@@ -21,6 +21,7 @@
 
 #include <optional>
 #include <regex>
+#include <iostream>
 
 static NVMEMap nvmeDeviceMap;
 
@@ -226,6 +227,7 @@ static void interfaceRemoved(sdbusplus::message::message& message,
 
 int main()
 {
+    std::cout << "Chau: It enters main() of NVMeSensorMain" << std::endl;
     boost::asio::io_service io;
     auto systemBus = std::make_shared<sdbusplus::asio::connection>(io);
     systemBus->request_name("xyz.openbmc_project.NVMeSensor");
